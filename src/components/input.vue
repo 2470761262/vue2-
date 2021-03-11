@@ -1,6 +1,9 @@
 <template>
    <div>
-       <input type="text" v-model="xioxi">
+       <div>wwwwwww</div>
+       <input type="text" :value="value" @input="www">
+       <br>
+       <slot></slot>
    </div>
 </template>
 
@@ -12,6 +15,13 @@
         data(){
             return{
                 xioxi:"677"
+            }
+        },
+        methods: {
+            www(value){
+                console.log(this.$attrs);
+                console.log(value,"value");
+                this.$emit("input",value.target.value);
             }
         },
         watch:{
